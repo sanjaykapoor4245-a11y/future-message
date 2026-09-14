@@ -1,0 +1,18 @@
+{
+  "overview": "A mobile-friendly time capsule app where users write a message, lock it until a future date, and reveal it to their future self after the countdown ends.",
+  "features": [
+    "Write a message and lock it as a time capsule",
+    "Choose a future unlock date and time",
+    "Live countdown until unlock",
+    "Hidden locked message until unlock time",
+    "Futuristic dark neon UI, mobile-first"
+  ],
+  "category": "productivity",
+  "tags": [
+    "time-capsule",
+    "future-message",
+    "countdown",
+    "productivity"
+  ],
+  "last_updated": "2026-09-14T13:47:43.998Z"
+}

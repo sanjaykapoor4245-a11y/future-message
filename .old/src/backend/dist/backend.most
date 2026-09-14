@@ -1,0 +1,48 @@
+// Version: 4.0.0
+type AccessControlState__201339279 =
+  {
+    var adminAssigned : Bool;
+    userRoles : Map__386906547<Principal, UserRole__91647283>
+  };
+type CapsuleId__389749873 = Nat;
+type CapsuleId__803633912 = Nat;
+type Capsule__1046073109 =
+  {id : CapsuleId__389749873; message : Text; title : Text; unlockAt : Int};
+type Capsule__756941138 =
+  {id : CapsuleId__803633912; message : Text; title : Text; unlockAt : Int};
+type Data__265875254<K, V> = {var count : Nat__58649523; kvs : [var ?(K, V)]};
+type Internal__161573640<K, V> =
+  {children : [var ?Node__430031793<K, V>]; data : Data__265875254<K, V>};
+type Leaf__1045638083<K, V> = {data : Data__265875254<K, V>};
+type Map__13625999<K, V> =
+  {var root : Node__430031793<K, V>; var size : Nat__58649523};
+type Map__386906547<K, V> = Map__670138087<K, V>;
+type Map__670138087<K, V> = Map__13625999<K, V>;
+type Nat__58649523 = Nat__920180692;
+type Nat__920180692 = Nat;
+type NewActor__843027286 =
+  {
+    accessControlState : AccessControlState__201339279;
+    capsuleCounter : {var nextId : CapsuleId__803633912};
+    capsules : Map__386906547<CapsuleId__803633912, Capsule__756941138>
+  };
+type Node__430031793<K, V> =
+  {#internal : Internal__161573640<K, V>; #leaf : Leaf__1045638083<K, V>};
+type OldActor__402068192 = {};
+type UserRole__91647283 = {#admin; #guest; #user};
+{
+  "20260914_000000" : (_old : OldActor__402068192) -> NewActor__843027286
+}
+actor  {
+  stable accessControlState :
+    {
+      var adminAssigned : Bool;
+      userRoles : Map__386906547<Principal, UserRole__91647283>
+    };
+  stable capsuleCounter : {var nextId : CapsuleId__389749873};
+  stable capsules :
+    {
+      var root : Node__430031793<CapsuleId__389749873, Capsule__1046073109>;
+      var size : Nat__58649523
+    }
+};
